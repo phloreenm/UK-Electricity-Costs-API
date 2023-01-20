@@ -28,6 +28,9 @@
                     data.forEach(function (item) {
                         count++;
                         var paragrah = document.createElement("p");
+                        paragrah.style.backgroundColor = randomColor();
+                        paragrah.style.padding = "0";
+                        paragrah.style.margin = "1px auto 1px auto";
                         paragrah.innerHTML = count + ". Overall: " + item.Overall + ", Timestamp: " + item.Timestamp + ", unixTimestamp: " + item.unixTimestamp;
                         document.getElementById("results-list").appendChild(paragrah);
                         // or use appendChild:
@@ -42,4 +45,7 @@
 
         })
     });
+    function randomColor() {
+        return '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0').toUpperCase();
+    }
     
